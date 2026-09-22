@@ -1,13 +1,19 @@
-"""VTUHub self-learning app for 1BAIA103 — Module 1."""
+"""VTUHub — serves the static classroom app (also works on GitHub Pages without Flask)."""
 import os
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, send_from_directory
 
-app = Flask(__name__)
+ROOT = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=None)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return send_from_directory(os.path.join(ROOT, "templates"), "index.html")
+
+
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(os.path.join(ROOT, "static"), filename)
 
 
 @app.route("/health")

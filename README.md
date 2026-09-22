@@ -24,17 +24,15 @@ python app.py
 
 Open http://127.0.0.1:5000
 
-## Deploy on Render
+## Host for free (no credit card)
 
-1. Push this folder to GitHub (see below).
-2. On [Render](https://render.com) → **New Web Service** → connect the repository.
-3. Settings:
-   - **Runtime:** Python 3
-   - **Build command:** `pip install -r requirements.txt`
-   - **Start command:** `gunicorn app:app --bind 0.0.0.0:$PORT`
-4. Deploy. Render sets `PORT` automatically.
+**Do not use Render Blueprint** — it now asks for payment (the Stripe popup).
 
-You may also use `render.yaml` (Blueprint) from the dashboard.
+Use **GitHub Pages** instead. Full steps: [DEPLOY-FREE.md](DEPLOY-FREE.md).
+
+1. Push this repo (must include the `docs/` folder).
+2. GitHub → **Settings → Pages** → Branch `main` → folder `/docs` → Save.
+3. Site URL: `https://lokeshmr23.github.io/VTUHub-1BAIA103/`
 
 ## Push to GitHub
 
