@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VTUHub · 1BAIA103 Introduction to AI</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">VH</div>
+      <div>
+        <h1>VTUHub Self-Learning</h1>
+        <p>1BAIA103 · Module 1 · Author: Dr. Lokesh M R, Professor, ISE, AJIET Mangaluru</p>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <button data-view="home" class="active">Home</button>
+      <button data-view="notes">Notes</button>
+      <button data-view="exam">Exam practice</button>
+      <button data-view="slides">Classroom slides</button>
+      <button data-view="video">Lecture video</button>
+      <button data-view="author">Author &amp; acknowledgement</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section id="view-home">
+      <div class="hero">
+        <h2>Prepare Module 1 the VTU way</h2>
+        <p>Read paraphrased notes (cited to your textbook), write answers as in the SEE paper, get a concept-wise comparison, and revise from slides or a spoken classroom lecture.</p>
+        <p class="cite">Class text: Dr. Lokesh M R, <em>Introduction to Artificial Intelligence and its Applications</em>, Module 1 Part A, Department of ISE, A J Institute of Engineering and Technology, Mangaluru (affiliated to VTU, Belagavi). Notes in this app are paraphrased in Indian English; figures and tables are redrawn and cited to avoid plagiarism.</p>
+        <p class="byline">Prepared under the guidance of <strong>Dr. Lokesh M R</strong>, Professor, Department of Information Science &amp; Engineering, AJIET, Mangaluru. <button class="btn ghost" data-go="author">Author, dedication &amp; acknowledgement</button></p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Classroom notes</h3>
+          <p>Definitions, history, types of AI, machine learning versus programming, Gardner’s intelligences — with figures, a formula box and Table 1.2.</p>
+          <button class="btn" data-go="notes">Open notes</button>
+        </div>
+        <div class="card">
+          <h3>2. VTU question paper practice</h3>
+          <p>2-mark, 6-mark and 10-mark questions in the usual VTU wording. Type your answer; we score coverage against the notes.</p>
+          <button class="btn" data-go="exam">Start writing</button>
+        </div>
+        <div class="card">
+          <h3>3. Slides + lecture video</h3>
+          <p>Classroom presentation and a video-style lecture (slides with browser speech). Use these when the checker asks you to revise a topic.</p>
+          <button class="btn" data-go="slides">Slides</button>
+          <button class="btn ghost" data-go="video">Video</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-notes" class="hidden">
+      <div class="grid" style="grid-template-columns: 260px 1fr;">
+        <div class="card">
+          <h3>Topics</h3>
+          <div class="topic-list" id="topicList"></div>
+        </div>
+        <div class="card note" id="noteBody"></div>
+      </div>
+    </section>
+
+    <section id="view-exam" class="hidden">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;">
+          <div>
+            <label>Paper set: </label>
+            <select id="paperSelect"></select>
+          </div>
+          <div>
+            <label>Filter marks: </label>
+            <select id="markFilter">
+              <option value="all">All</option>
+              <option value="2">2 marks</option>
+              <option value="6">5–6 marks</option>
+              <option value="10">8–10 marks</option>
+            </select>
+          </div>
+        </div>
+        <div id="qNav" style="margin-top:12px;"></div>
+      </div>
+      <div class="card" id="qCard"></div>
+      <div class="card hidden" id="resultCard"></div>
+    </section>
+
+    <section id="view-slides" class="hidden">
+      <div class="card">
+        <div class="slide-stage" id="slideStage"></div>
+        <div class="slide-nav">
+          <button class="btn ghost" id="prevSlide">Previous</button>
+          <span id="slidePos"></span>
+          <button class="btn" id="nextSlide">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-video" class="hidden">
+      <div class="card">
+        <h3>Classroom lecture (slides + speech)</h3>
+        <p>Press play. The lecture uses the browser’s speech engine in Indian English where available. You may pause or jump slides.</p>
+        <div class="video-box">
+          <div class="slide-stage" id="vidStage"></div>
+          <div>
+            <button class="btn" id="playVid">Play lecture</button>
+            <button class="btn ghost" id="pauseVid">Pause</button>
+            <button class="btn ghost" id="stopVid">Stop</button>
+            <p id="vidStatus" class="cite">Ready.</p>
+            <ol id="vidChapters"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">VTUHub · 1BAIA103 Module 1 · For private study. Cite the textbook; do not submit these notes as your own.</footer>
+  <script src="/static/js/content.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
